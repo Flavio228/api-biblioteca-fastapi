@@ -1,4 +1,10 @@
 import sqlite3
+import os
+
+RUTA_BD = os.path.join(
+    os.getenv("RAILWAY_VOLUME_MOUNT_PATH", "."),
+    "biblioteca.db"
+)
 
 def formatear_libro(libro):
     libro_diccionario = {
@@ -12,8 +18,9 @@ def formatear_libro(libro):
 
 def crear_tabla():
 
-    conexion = sqlite3.connect("biblioteca.db")
+    conexion = sqlite3.connect(RUTA_BD)
     cursor = conexion.cursor()
+
 
     cursor.execute ("""
     CREATE TABLE IF NOT EXISTS libros (
@@ -30,7 +37,7 @@ def crear_tabla():
 def insertar_libro(titulo, autor, anio):
 
 
-    conexion = sqlite3.connect("biblioteca.db")
+    conexion = sqlite3.connect(RUTA_BD)
     cursor = conexion.cursor()
     cursor.execute(
         """
@@ -46,7 +53,7 @@ def insertar_libro(titulo, autor, anio):
     return id_libro
 
 def obtener_libros():
-    conexion = sqlite3.connect("biblioteca.db")
+    conexion = sqlite3.connect(RUTA_BD)
     cursor = conexion.cursor()
 
     cursor.execute(
@@ -64,7 +71,7 @@ def obtener_libros():
     return libros_formateados
 
 def buscar_libro_id (id_libro):
-    conexion = sqlite3.connect("biblioteca.db")
+    conexion = sqlite3.connect(RUTA_BD)
     cursor = conexion.cursor()
     cursor.execute(
         """
@@ -84,7 +91,7 @@ def buscar_libro_id (id_libro):
     return libro_diccionario
 
 def buscar_libros(texto):
-    conexion = sqlite3.connect("biblioteca.db")
+    conexion = sqlite3.connect(RUTA_BD)
     cursor = conexion.cursor()
     patron = f"%{texto}%"
     cursor.execute(
@@ -103,7 +110,7 @@ def buscar_libros(texto):
     return  libros_formateados
 
 def marcar_leido(id_libro):
-    conexion = sqlite3.connect("biblioteca.db")
+    conexion = sqlite3.connect(RUTA_BD)
     cursor = conexion.cursor()
 
     cursor.execute(
@@ -120,7 +127,7 @@ def marcar_leido(id_libro):
     return filas_modificadas
 
 def eliminar_libro(id_libro):
-    conexion = sqlite3.connect("biblioteca.db")
+    conexion = sqlite3.connect(RUTA_BD)
     cursor = conexion.cursor()
 
     cursor.execute(
