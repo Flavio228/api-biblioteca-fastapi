@@ -12,6 +12,10 @@ La API está desplegada en Railway y puede probarse desde la documentación inte
 
 https://api-biblioteca-fastapi-production.up.railway.app/docs
 
+## Vista de Swagger
+<img width="1900" height="908" alt="Swagger de la API de Biblioteca" src="https://github.com/user-attachments/assets/e1ccf10c-32e2-4841-9659-929d0da1c1df" />
+
+
 ## Funcionalidades
 
 - Crear libros.
