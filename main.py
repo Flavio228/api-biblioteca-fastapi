@@ -46,7 +46,7 @@ def buscar_libros_endpoint(texto:str):
 
 
 @app.get("/libros/{id_libro}", response_model=LibroRespuesta)
-def obtener_libro_id (id_libro: int):
+def obtener_libro_id(id_libro: int): 
     libro = buscar_libro_id(id_libro)
     if libro is None:
         raise HTTPException(status_code=404, detail="Libro no encontrado")
@@ -54,7 +54,7 @@ def obtener_libro_id (id_libro: int):
     return libro
 
 @app.put("/libros/{id_libro}/leido", response_model=LibroRespuesta)
-def modificar_leido (id_libro:int):
+def modificar_leido(id_libro:int):
     filas_modificadas = marcar_leido(id_libro)
     if filas_modificadas == 0:
         raise HTTPException (status_code=404, detail="Libro no encontrado")
