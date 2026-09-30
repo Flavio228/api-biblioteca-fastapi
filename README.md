@@ -139,3 +139,6 @@ He trabajado con una base de datos SQLite para mantener los datos aunque la apli
 También he practicado el uso de path parameters y query parameters, la separación del código entre `main.py`, `database.py` y `schemas.py`, y la refactorización de funciones para evitar repetir lógica.
 
 Por último, he desplegado la API en Railway con un volumen persistente, consiguiendo que pueda utilizarse desde cualquier dispositivo a través de una URL pública.
+
+
+Práctica de Pull Request.
