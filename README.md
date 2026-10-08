@@ -8,8 +8,10 @@ Los datos se almacenan de forma persistente con SQLite y la API está desplegada
 
 ## API pública
 
-El despliegue público se encuentra temporalmente inactivo tras finalizar el periodo de prueba de Railway.
-El código y la configuración de despliegue se mantienen en el repositorio.
+La API está desplegada en Railway y puede probarse desde la documentación interactiva de Swagger:
+
+https://api-biblioteca-fastapi-production.up.railway.app/docs
+
 
 ## Vista de Swagger
 <img width="1900" height="908" alt="Swagger de la API de Biblioteca" src="https://github.com/user-attachments/assets/e1ccf10c-32e2-4841-9659-929d0da1c1df" />
